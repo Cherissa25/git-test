@@ -1,26 +1,25 @@
 Configure the AWS Provider
 provider "aws" {
-  region = "us-east-1"
+  region = "availabity_zone"
 }
 #creating the lightsail instance
 resource "aws_lightsail_instance" "lightsail_instance" {
-  name              = "MyDevOps"
-  availability_zone = "us-east-1a"
-  blueprint_id      = "centos_7_2009_01"
-  bundle_id         = "nano_1_0"
-  key_pair_name = "Week3"
+  name              = "Server_name"
+  availability_zone = "Availabity_zone"
+  blueprint_id      = "OS+APPS_BLUEPRINT"
+  bundle_id         = "instance_plan"
+  key_pair_name = "AlreadyExisting_Keypair-name"
   tags = {
-    name = "Terraform devops"
+    name = "tag-name"
     env  = "dev"
-    owner = "Cherissa"
+    owner = "owner_name"
   }
 }
 
 resource "aws_iam_group" "group1" {
-  name = "terraform"
+  name = "group_name"
 }
 
 resource "aws_iam_user" "demo-user" {
-  name = "Cherie"
+  name = "username"
 }
-
